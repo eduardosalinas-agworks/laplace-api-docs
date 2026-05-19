@@ -1,0 +1,67 @@
+---
+title: "Criar Professor"
+description: "Cadastro de professor"
+---
+
+# Criar Professor
+
+## Endpoint
+
+```http
+POST /teachers
+```
+
+## Campos do body
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `classes` | array[number] | Sim | Códigos das turmas |
+| `name` | string | Sim | Nome do professor |
+| `email` | string | Sim | E-mail do professor |
+| `registration` | string | Não | Matrícula |
+| `document` | string | Não | CPF ou CNPJ |
+| `homephone` | string | Não | Telefone fixo |
+| `cellphone` | string | Não | Celular |
+| `zip_code` | string | Não | CEP |
+| `address` | string | Não | Endereço |
+| `address_number` | string | Não | Número |
+| `address_complement` | string | Não | Complemento |
+| `neighborhood` | string | Não | Bairro |
+| `city` | string | Não | Cidade |
+| `state` | string | Não | UF |
+
+<RequestExample>
+```bash
+curl --request POST \
+  --url 'https://api.uat.laplace.app.br/api/v1/association/teachers' \
+  --header 'Authorization: Bearer <token>' \
+  --header 'Content-Type: application/json' \
+  --data '{"teachers":[{"classes":[1,2,3],"name":"Professor Modelo","email":"professor@escola.com.br","registration":"R12345"}]}'
+```
+</RequestExample>
+
+## Body de exemplo
+
+```json
+{"teachers":[{"classes":[1,2,3],"name":"Professor Modelo","email":"professor@escola.com.br","registration":"R12345"}]}
+```
+
+<ResponseExample>
+```json
+{
+  "data": [
+    {
+      "teacher_id": 1,
+      "name": "Professor Modelo"
+    }
+  ],
+  "messages": [
+    "Professor(s) criado(s) com sucesso."
+  ]
+}
+```
+</ResponseExample>
+
+<Warning>
+Valide os campos obrigatórios antes do envio para evitar erros `400`.
+</Warning>

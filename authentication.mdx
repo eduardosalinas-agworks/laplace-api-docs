@@ -1,0 +1,31 @@
+---
+title: "Autenticação"
+description: "Como autenticar chamadas na API Banco Laplace"
+---
+
+# Autenticação
+
+Para utilizar a API Banco Laplace, é necessário utilizar as credenciais de API disponibilizadas pela Laplace.
+
+## Credenciais
+
+| Campo | Tipo | Descrição |
+| --- | --- | --- |
+| `username` | string | Usuário da API |
+| `password` | string | Senha da API |
+
+<Warning>
+Nunca compartilhe credenciais em canais públicos, tickets, chats ou repositórios. Utilize variáveis de ambiente sempre que possível.
+</Warning>
+
+## Headers recomendados
+
+```http
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer <token>
+```
+
+<Note>
+O método exato de obtenção do token deve ser validado com a equipe Laplace caso ainda não esteja disponível no contrato técnico.
+</Note>

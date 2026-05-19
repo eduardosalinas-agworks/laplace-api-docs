@@ -1,0 +1,17 @@
+---
+title: "Status codes"
+description: "Principais códigos HTTP retornados pela API"
+---
+
+# Status codes
+
+| Código | Significado | Quando ocorre |
+| --- | --- | --- |
+| `201` | Criado | Cadastro realizado com sucesso |
+| `202` | Aceito/processado | Consulta, atualização, exclusão ou envio processado |
+| `400` | Requisição inválida | Campos obrigatórios ausentes ou inválidos |
+| `404` | Não encontrado | Registro inexistente ou sem dados para os filtros informados |
+
+<Info>
+Algumas operações de exclusão podem retornar `404` quando a entidade não pode ser removida por possuir vínculos ativos.
+</Info>

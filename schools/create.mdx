@@ -1,0 +1,66 @@
+---
+title: "Criar Escola"
+description: "Cadastro de escola"
+---
+
+# Criar Escola
+
+## Endpoint
+
+```http
+POST /schools
+```
+
+## Campos do body
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `name` | string | Sim | Nome da escola |
+| `email` | string | Sim | E-mail da escola |
+| `registration` | string | Não | Matrícula |
+| `document` | string | Não | CPF ou CNPJ |
+| `homephone` | string | Não | Telefone fixo |
+| `cellphone` | string | Não | Celular |
+| `zip_code` | string | Não | CEP |
+| `address` | string | Não | Endereço |
+| `address_number` | string | Não | Número |
+| `address_complement` | string | Não | Complemento |
+| `neighborhood` | string | Não | Bairro |
+| `city` | string | Não | Cidade |
+| `state` | string | Não | UF |
+
+<RequestExample>
+```bash
+curl --request POST \
+  --url 'https://api.uat.laplace.app.br/api/v1/association/schools' \
+  --header 'Authorization: Bearer <token>' \
+  --header 'Content-Type: application/json' \
+  --data '{"schools":[{"name":"Escola Modelo","email":"contato@escola.com.br","city":"São Paulo","state":"SP"}]}'
+```
+</RequestExample>
+
+## Body de exemplo
+
+```json
+{"schools":[{"name":"Escola Modelo","email":"contato@escola.com.br","city":"São Paulo","state":"SP"}]}
+```
+
+<ResponseExample>
+```json
+{
+  "data": [
+    {
+      "school_id": 1,
+      "name": "Escola Modelo"
+    }
+  ],
+  "messages": [
+    "Escola(s) criado(s) com sucesso."
+  ]
+}
+```
+</ResponseExample>
+
+<Warning>
+Valide os campos obrigatórios antes do envio para evitar erros `400`.
+</Warning>

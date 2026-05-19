@@ -1,0 +1,41 @@
+---
+title: "Atualizar Escola"
+description: "Atualização de dados de escola"
+---
+
+# Atualizar Escola
+
+## Endpoint
+
+```http
+PUT /schools
+```
+
+## Campos principais
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `school_id` | number | Sim | Código da escola |
+| `name` | string | Não | Nome atualizado |
+| `email` | string | Não | E-mail atualizado, quando aplicável |
+
+## Body de exemplo
+
+```json
+{"schools":[{"school_id":1,"name":"Escola Modelo Atualizada","email":"contato@escola.com.br"}]}
+```
+
+<ResponseExample>
+```json
+{
+  "data": [
+    {
+      "school_id": 1
+    }
+  ],
+  "messages": [
+    "Escola(s) atualizado(s) com sucesso."
+  ]
+}
+```
+</ResponseExample>

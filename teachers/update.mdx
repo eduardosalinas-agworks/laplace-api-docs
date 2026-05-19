@@ -1,0 +1,41 @@
+---
+title: "Atualizar Professor"
+description: "Atualização de dados de professor"
+---
+
+# Atualizar Professor
+
+## Endpoint
+
+```http
+PUT /teachers
+```
+
+## Campos principais
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `teacher_id` | number | Sim | Código do professor |
+| `name` | string | Não | Nome atualizado |
+| `email` | string | Não | E-mail atualizado, quando aplicável |
+
+## Body de exemplo
+
+```json
+{"teachers":[{"teacher_id":1,"classes":[1,2,3],"name":"Professor Modelo Atualizado","email":"professor@escola.com.br"}]}
+```
+
+<ResponseExample>
+```json
+{
+  "data": [
+    {
+      "teacher_id": 1
+    }
+  ],
+  "messages": [
+    "Professor(s) atualizado(s) com sucesso."
+  ]
+}
+```
+</ResponseExample>

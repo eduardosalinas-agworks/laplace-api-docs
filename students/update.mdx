@@ -1,0 +1,41 @@
+---
+title: "Atualizar Aluno"
+description: "Atualização de dados de aluno"
+---
+
+# Atualizar Aluno
+
+## Endpoint
+
+```http
+PUT /students
+```
+
+## Campos principais
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `student_id` | number | Sim | Código do aluno |
+| `name` | string | Não | Nome atualizado |
+| `email` | string | Não | E-mail atualizado, quando aplicável |
+
+## Body de exemplo
+
+```json
+{"students":[{"student_id":1,"class_id":1,"name":"Aluno Modelo Atualizado","email":"aluno@escola.com.br","registration":"R12345"}]}
+```
+
+<ResponseExample>
+```json
+{
+  "data": [
+    {
+      "student_id": 1
+    }
+  ],
+  "messages": [
+    "Aluno(s) atualizado(s) com sucesso."
+  ]
+}
+```
+</ResponseExample>

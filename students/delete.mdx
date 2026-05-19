@@ -1,0 +1,42 @@
+---
+title: "Excluir Aluno"
+description: "Exclusão ou desativação de aluno"
+---
+
+# Excluir Aluno
+
+## Endpoint
+
+```http
+DELETE /students
+```
+
+## Body
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `student_id` | number | Sim | Código de aluno |
+
+<RequestExample>
+```bash
+curl --request DELETE \
+  --url 'https://api.uat.laplace.app.br/api/v1/association/students' \
+  --header 'Authorization: Bearer <token>' \
+  --header 'Content-Type: application/x-www-form-urlencoded' \
+  --data 'student_id=1'
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "messages": [
+    "Aluno removido(a) com sucesso."
+  ]
+}
+```
+</ResponseExample>
+
+<Info>
+A exclusão pode falhar caso existam vínculos ativos relacionados à entidade.
+</Info>

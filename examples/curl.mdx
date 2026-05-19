@@ -1,0 +1,24 @@
+---
+title: "Exemplos cURL"
+description: "Chamadas de exemplo para testar a API"
+---
+
+# Exemplos cURL
+
+## Listar escolas
+
+```bash
+curl --request GET \
+  --url 'https://api.uat.laplace.app.br/api/v1/association/schools?page=0&par_page=10' \
+  --header 'Authorization: Bearer <token>'
+```
+
+## Criar escola
+
+```bash
+curl --request POST \
+  --url 'https://api.uat.laplace.app.br/api/v1/association/schools' \
+  --header 'Authorization: Bearer <token>' \
+  --header 'Content-Type: application/json' \
+  --data '{"schools":[{"name":"Escola Modelo","email":"contato@escola.com.br"}]}'
+```

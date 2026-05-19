@@ -1,0 +1,59 @@
+---
+title: "Criar Turma"
+description: "Cadastro de turma"
+---
+
+# Criar Turma
+
+## Endpoint
+
+```http
+POST /classes
+```
+
+## Campos do body
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `name` | string | Sim | Nome da turma |
+| `school_id` | number | Sim | Código da escola |
+| `teaching_id` | number | Sim | Código da modalidade |
+| `period_id` | number | Sim | Código do período |
+| `serie_id` | number | Sim | Código da série |
+
+
+<RequestExample>
+```bash
+curl --request POST \
+  --url 'https://api.uat.laplace.app.br/api/v1/association/classes' \
+  --header 'Authorization: Bearer <token>' \
+  --header 'Content-Type: application/json' \
+  --data '{"classes":[{"name":"Turma Modelo","school_id":1,"teaching_id":1,"period_id":1,"serie_id":1}]}'
+```
+</RequestExample>
+
+## Body de exemplo
+
+```json
+{"classes":[{"name":"Turma Modelo","school_id":1,"teaching_id":1,"period_id":1,"serie_id":1}]}
+```
+
+<ResponseExample>
+```json
+{
+  "data": [
+    {
+      "class_id": 1,
+      "name": "Turma Modelo"
+    }
+  ],
+  "messages": [
+    "Turma(s) criado(s) com sucesso."
+  ]
+}
+```
+</ResponseExample>
+
+<Warning>
+Valide os campos obrigatórios antes do envio para evitar erros `400`.
+</Warning>

@@ -1,0 +1,68 @@
+---
+title: "Criar Aluno"
+description: "Cadastro de aluno"
+---
+
+# Criar Aluno
+
+## Endpoint
+
+```http
+POST /students
+```
+
+## Campos do body
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `class_id` | number | Sim | Código da turma |
+| `name` | string | Sim | Nome do aluno |
+| `email` | string | Sim | E-mail do aluno |
+| `registration` | string | Sim | Matrícula do aluno |
+| `registration` | string | Não | Matrícula |
+| `document` | string | Não | CPF ou CNPJ |
+| `homephone` | string | Não | Telefone fixo |
+| `cellphone` | string | Não | Celular |
+| `zip_code` | string | Não | CEP |
+| `address` | string | Não | Endereço |
+| `address_number` | string | Não | Número |
+| `address_complement` | string | Não | Complemento |
+| `neighborhood` | string | Não | Bairro |
+| `city` | string | Não | Cidade |
+| `state` | string | Não | UF |
+
+<RequestExample>
+```bash
+curl --request POST \
+  --url 'https://api.uat.laplace.app.br/api/v1/association/students' \
+  --header 'Authorization: Bearer <token>' \
+  --header 'Content-Type: application/json' \
+  --data '{"students":[{"class_id":1,"name":"Aluno Modelo","email":"aluno@escola.com.br","registration":"R12345"}]}'
+```
+</RequestExample>
+
+## Body de exemplo
+
+```json
+{"students":[{"class_id":1,"name":"Aluno Modelo","email":"aluno@escola.com.br","registration":"R12345"}]}
+```
+
+<ResponseExample>
+```json
+{
+  "data": [
+    {
+      "student_id": 1,
+      "name": "Aluno Modelo"
+    }
+  ],
+  "messages": [
+    "Aluno(s) criado(s) com sucesso."
+  ]
+}
+```
+</ResponseExample>
+
+<Warning>
+Valide os campos obrigatórios antes do envio para evitar erros `400`.
+</Warning>

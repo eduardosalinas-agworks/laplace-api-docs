@@ -1,0 +1,42 @@
+---
+title: "Excluir Turma"
+description: "Exclusão ou desativação de turma"
+---
+
+# Excluir Turma
+
+## Endpoint
+
+```http
+DELETE /classes
+```
+
+## Body
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `class_id` | number | Sim | Código de turma |
+
+<RequestExample>
+```bash
+curl --request DELETE \
+  --url 'https://api.uat.laplace.app.br/api/v1/association/classes' \
+  --header 'Authorization: Bearer <token>' \
+  --header 'Content-Type: application/x-www-form-urlencoded' \
+  --data 'class_id=1'
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "messages": [
+    "Turma removido(a) com sucesso."
+  ]
+}
+```
+</ResponseExample>
+
+<Info>
+A exclusão pode falhar caso existam vínculos ativos relacionados à entidade.
+</Info>

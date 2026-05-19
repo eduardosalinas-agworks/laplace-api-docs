@@ -1,0 +1,46 @@
+---
+title: "Introdução"
+description: "Visão geral da API Banco Laplace"
+---
+
+# API Banco Laplace
+
+A API Banco Laplace permite a integração com recursos acadêmicos e administrativos, incluindo escolas, turmas, professores, alunos, usuários e catálogos auxiliares.
+
+<CardGroup cols={2}>
+  <Card title="Gestão escolar" icon="school" href="/schools/list">
+    Consulte, crie, atualize e remova escolas.
+  </Card>
+  <Card title="Gestão acadêmica" icon="users" href="/classes/list">
+    Gerencie turmas, professores e alunos.
+  </Card>
+  <Card title="Catálogos auxiliares" icon="list" href="/catalogs/teachings">
+    Consulte modalidades de ensino, períodos e séries.
+  </Card>
+  <Card title="Tratamento de erros" icon="triangle-alert" href="/reference/errors">
+    Entenda os principais retornos da API.
+  </Card>
+</CardGroup>
+
+## URL base
+
+```http
+https://api.uat.laplace.app.br/api/v1/association/
+```
+
+<Info>
+Esta documentação usa o ambiente UAT como referência. Para produção, confirme a URL base fornecida pela equipe Laplace.
+</Info>
+
+## Recursos disponíveis
+
+| Recurso | Endpoint base | Descrição |
+| --- | --- | --- |
+| Escolas | `/schools` | Cadastro e manutenção de escolas |
+| Turmas | `/classes` | Cadastro e manutenção de turmas |
+| Professores | `/teachers` | Cadastro e manutenção de professores |
+| Alunos | `/students` | Cadastro e manutenção de alunos |
+| Usuários | `/sendmail` | Redefinição de senha por e-mail |
+| Ensino | `/teachings` | Modalidades de ensino |
+| Períodos | `/periods` | Períodos disponíveis |
+| Séries | `/series` | Séries disponíveis |

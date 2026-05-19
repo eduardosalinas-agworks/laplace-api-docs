@@ -1,0 +1,41 @@
+---
+title: "Atualizar Turma"
+description: "Atualização de dados de turma"
+---
+
+# Atualizar Turma
+
+## Endpoint
+
+```http
+PUT /classes
+```
+
+## Campos principais
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `class_id` | number | Sim | Código da turma |
+| `name` | string | Não | Nome atualizado |
+| `email` | string | Não | E-mail atualizado, quando aplicável |
+
+## Body de exemplo
+
+```json
+{"classes":[{"class_id":1,"name":"Turma Modelo Atualizada","school_id":1,"teaching_id":1,"period_id":1,"serie_id":1}]}
+```
+
+<ResponseExample>
+```json
+{
+  "data": [
+    {
+      "class_id": 1
+    }
+  ],
+  "messages": [
+    "Turma(s) atualizado(s) com sucesso."
+  ]
+}
+```
+</ResponseExample>

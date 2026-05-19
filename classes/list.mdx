@@ -1,0 +1,49 @@
+---
+title: "Listar Turmas"
+description: "Consulta de turmas ativos"
+---
+
+# Listar Turmas
+
+## Endpoint
+
+```http
+GET /classes
+```
+
+## Parâmetros de consulta
+
+| Parâmetro | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `name` | string | Não | Filtra por nome |
+| `class_id` | number | Não | Filtra pelo código da entidade |
+| `page` | number | Não | Número da página |
+| `par_page` | number | Não | Quantidade de registros por página |
+
+<RequestExample>
+```bash
+curl --request GET \
+  --url 'https://api.uat.laplace.app.br/api/v1/association/classes?page=0&par_page=10' \
+  --header 'Authorization: Bearer <token>'
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "classes": [
+    {
+      "class_id": 1,
+      "name": "Turma Modelo"
+    }
+  ],
+  "data": {
+    "pagination": {
+      "current_page": 1,
+      "total": 1,
+      "per_page": 10
+    }
+  }
+}
+```
+</ResponseExample>

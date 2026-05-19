@@ -1,0 +1,39 @@
+---
+title: "Paginação"
+description: "Como interpretar respostas paginadas"
+---
+
+# Paginação
+
+Endpoints de listagem retornam metadados de paginação dentro de `data.pagination`.
+
+## Campos de paginação
+
+| Campo | Descrição |
+| --- | --- |
+| `count` | Quantidade de registros na página atual |
+| `current_page` | Página atual |
+| `last_page` | Última página disponível |
+| `first_item` | Primeiro item da página |
+| `last_item` | Último item da página |
+| `total` | Total de registros encontrados |
+| `per_page` | Quantidade de registros por página |
+
+## Exemplo
+
+```json
+{
+  "data": {
+    "pagination": {
+      "count": 1,
+      "current_page": 1,
+      "last_page": 1,
+      "first_item": 1,
+      "last_item": 1,
+      "total": 1,
+      "per_page": 10,
+      "query_string": false
+    }
+  }
+}
+```

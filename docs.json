@@ -1,0 +1,79 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "API Banco Laplace",
+  "colors": {
+    "primary": "#2563eb",
+    "light": "#3b82f6",
+    "dark": "#1d4ed8"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentação",
+        "groups": [
+          {
+            "group": "Introdução",
+            "pages": [
+              "introduction",
+              "authentication",
+              "integration-flow"
+            ]
+          },
+          {
+            "group": "Escolas",
+            "pages": [
+              "schools/list",
+              "schools/create",
+              "schools/update",
+              "schools/delete"
+            ]
+          },
+          {
+            "group": "Turmas",
+            "pages": [
+              "classes/list",
+              "classes/create",
+              "classes/update",
+              "classes/delete"
+            ]
+          },
+          {
+            "group": "Professores",
+            "pages": [
+              "teachers/list",
+              "teachers/create",
+              "teachers/update",
+              "teachers/delete"
+            ]
+          },
+          {
+            "group": "Alunos",
+            "pages": [
+              "students/list",
+              "students/create",
+              "students/update",
+              "students/delete"
+            ]
+          },
+          {
+            "group": "Usuários",
+            "pages": [
+              "users/reset-password"
+            ]
+          },
+          {
+            "group": "Referência",
+            "pages": [
+              "reference/catalogs",
+              "reference/errors",
+              "reference/pagination",
+              "reference/status-codes"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

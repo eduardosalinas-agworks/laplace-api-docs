@@ -1,0 +1,34 @@
+---
+title: "Tratamento de erros"
+description: "Formato dos erros e recomendações de tratamento"
+---
+
+# Tratamento de erros
+
+A API retorna mensagens de erro em formato JSON. O cliente deve sempre ler o campo `errors.messages` ou estruturas equivalentes de erro.
+
+## Exemplo de erro de validação
+
+```json
+{
+  "errors": {
+    "messages": [
+      "O Campo schools.0.name é obrigatório."
+    ]
+  }
+}
+```
+
+## Recomendações
+
+<AccordionGroup>
+  <Accordion title="Validação antes do envio">
+    Valide campos obrigatórios, tamanho mínimo de texto, formato de e-mail e IDs antes de enviar a requisição.
+  </Accordion>
+  <Accordion title="Tratamento por entidade">
+    Mensagens de erro podem variar entre escolas, turmas, professores e alunos. Mostre a mensagem retornada pela API ao operador técnico.
+  </Accordion>
+  <Accordion title="Logs de integração">
+    Registre método, endpoint, payload enviado, status code e body de resposta para facilitar suporte.
+  </Accordion>
+</AccordionGroup>

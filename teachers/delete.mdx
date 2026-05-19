@@ -1,0 +1,42 @@
+---
+title: "Excluir Professor"
+description: "Exclusão ou desativação de professor"
+---
+
+# Excluir Professor
+
+## Endpoint
+
+```http
+DELETE /teachers
+```
+
+## Body
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `teacher_id` | number | Sim | Código de professor |
+
+<RequestExample>
+```bash
+curl --request DELETE \
+  --url 'https://api.uat.laplace.app.br/api/v1/association/teachers' \
+  --header 'Authorization: Bearer <token>' \
+  --header 'Content-Type: application/x-www-form-urlencoded' \
+  --data 'teacher_id=1'
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "messages": [
+    "Professor removido(a) com sucesso."
+  ]
+}
+```
+</ResponseExample>
+
+<Info>
+A exclusão pode falhar caso existam vínculos ativos relacionados à entidade.
+</Info>

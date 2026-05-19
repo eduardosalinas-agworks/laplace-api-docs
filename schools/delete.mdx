@@ -1,0 +1,42 @@
+---
+title: "Excluir Escola"
+description: "Exclusão ou desativação de escola"
+---
+
+# Excluir Escola
+
+## Endpoint
+
+```http
+DELETE /schools
+```
+
+## Body
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `school_id` | number | Sim | Código de escola |
+
+<RequestExample>
+```bash
+curl --request DELETE \
+  --url 'https://api.uat.laplace.app.br/api/v1/association/schools' \
+  --header 'Authorization: Bearer <token>' \
+  --header 'Content-Type: application/x-www-form-urlencoded' \
+  --data 'school_id=1'
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "messages": [
+    "Escola removido(a) com sucesso."
+  ]
+}
+```
+</ResponseExample>
+
+<Info>
+A exclusão pode falhar caso existam vínculos ativos relacionados à entidade.
+</Info>
